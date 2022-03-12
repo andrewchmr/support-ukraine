@@ -8,5 +8,6 @@ export const ArrowRight = () => {
       fill="none"
     >
       <path d="M1 1L7 7L1 13" stroke="#01725C" strokeWidth="2" />
-    </svg>);
+    </svg>
+  );
 };
