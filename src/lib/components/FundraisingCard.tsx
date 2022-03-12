@@ -1,4 +1,5 @@
-import { Box, Image, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { Box, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import NextImage from "next/image";
 
 import type { Fundraising } from "services/client";
 
@@ -15,7 +16,14 @@ export const FundraisingCard = ({
 }: Props) => {
   return (
     <LinkBox minWidth={minWidth} maxW="sm" borderWidth="1px" overflow="hidden">
-      <Image src={image.fields.file.url} alt={image.fields.title} />
+      <NextImage
+        src={`https:${image.fields.file.url}`}
+        alt={image.fields.title}
+        width={256}
+        height={144}
+        layout="responsive"
+        objectFit="cover"
+      />
       <Box px="4" py="6">
         <Box
           mt="1"
