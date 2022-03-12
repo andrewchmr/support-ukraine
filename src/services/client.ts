@@ -6,6 +6,7 @@ import {
 } from "contentful";
 
 import type {
+  IContactUsFields,
   IFundraising,
   IFundraisingFields,
   ILandingPageFields,
@@ -37,4 +38,13 @@ export async function fetchLandingPageSectionData(
     "fields.sectionId": section,
   });
   return sectionData.fields;
+}
+
+export async function fetchContactData(): Promise<IContactUsFields> {
+  const {
+    items: [contactUs],
+  } = await client.getEntries<IContactUsFields>({
+    content_type: "contactUs",
+  });
+  return contactUs.fields;
 }
