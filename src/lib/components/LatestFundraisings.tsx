@@ -1,4 +1,4 @@
-import { Flex, Heading, Link } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import type { VisibilityContext } from "react-horizontal-scrolling-menu";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
@@ -31,7 +31,7 @@ export const LatestFundraisings = ({ fundraisings }: Props) => {
   };
 
   return (
-    <>
+    <Box as="section" my={12}>
       <Flex justify="space-between" marginBottom={8}>
         <Heading as="h1" fontWeight="bold" fontSize={{ base: "lg", sm: "3xl" }}>
           Latest fundraisings
@@ -59,6 +59,6 @@ export const LatestFundraisings = ({ fundraisings }: Props) => {
           ))}
         </Flex>
       </ScrollMenu>
-    </>
+    </Box>
   );
 };
