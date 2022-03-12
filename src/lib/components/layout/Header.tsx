@@ -3,8 +3,6 @@ import type { BoxProps, TextProps } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
-import type { ILandingPageFields } from "../../../../@types/generated/contentful";
-
 import { LayoutContainer } from "./LayoutContainer";
 
 interface HeaderTextProps extends TextProps {
@@ -15,7 +13,7 @@ const links = [
   { name: "Fundraisings", path: "/fundraisings" },
   {
     name: "About Us",
-    path: "/#about_us_section" as `/#${ILandingPageFields["sectionId"]}`,
+    path: "/#about_us",
   },
   {
     name: "Contact",

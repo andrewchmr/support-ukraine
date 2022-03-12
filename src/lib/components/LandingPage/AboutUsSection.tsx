@@ -12,7 +12,7 @@ export function AboutUsSection({
   aboutUsDescription,
 }: AboutUsSectionProps) {
   return (
-    <Flex id="about_us_section" py="16">
+    <Flex id="about_us" py="16">
       <Box flex={1}>
         <LineAboveTitle bgColor="#3A3A3A" />
         <Text
