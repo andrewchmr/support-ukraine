@@ -9,7 +9,7 @@ export const LayoutContainer = ({
   outerProps,
   ...props
 }: LayoutContainerProps) => (
-  <Box px={16} transition="0.5s ease-out" {...outerProps}>
+  <Box px={[5, 16]} transition="0.5s ease-out" {...outerProps}>
     <Box maxWidth={1200} mx="auto" {...props}>
       {children}
     </Box>
