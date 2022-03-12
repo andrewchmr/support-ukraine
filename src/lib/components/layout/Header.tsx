@@ -1,12 +1,16 @@
+import { Box, Heading, Text } from "@chakra-ui/react";
 import type { BoxProps, TextProps } from "@chakra-ui/react";
-import { Text, Box, Heading } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 import { LayoutContainer } from "./LayoutContainer";
 
 interface HeaderTextProps extends TextProps {
   isDark?: boolean;
 }
+
+const links = [{ name: "Fundraisings", path: "/fundraisings" }];
+
 const HeaderText = ({ isDark = false, ...props }: HeaderTextProps) => (
   <Text fontSize="lg" color={isDark ? "white" : "black"} {...props} />
 );
@@ -15,6 +19,8 @@ interface HeaderProps extends BoxProps {
   isDark?: boolean;
 }
 const Header = ({ isDark = false, ...props }: HeaderProps) => {
+  const router = useRouter();
+
   return (
     <LayoutContainer
       display="flex"
@@ -28,19 +34,30 @@ const Header = ({ isDark = false, ...props }: HeaderProps) => {
       {...props}
     >
       <Heading as="h1" size="md">
-        <Link href="/" passHref>
+        <NextLink href="/" passHref>
           <HeaderText as="a" isDark={isDark}>
             Logo
           </HeaderText>
-        </Link>
+        </NextLink>
       </Heading>
-
       <Box marginLeft="auto">
-        <Link href="/fundraisings" passHref>
-          <HeaderText as="a" isDark={isDark}>
-            Fundraisings
-          </HeaderText>
-        </Link>
+        {links.map((link) => {
+          const isActive = router.pathname === link.path;
+
+          return (
+            <NextLink key={link.path} href={link.path} passHref>
+              <HeaderText
+                as="a"
+                fontSize="lg"
+                fontWeight={isActive ? "semibold" : undefined}
+                textDecoration={isActive ? "underline" : undefined}
+                isDark={isDark}
+              >
+                {link.name}
+              </HeaderText>
+            </NextLink>
+          );
+        })}
       </Box>
     </LayoutContainer>
   );

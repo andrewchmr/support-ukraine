@@ -1,8 +1,10 @@
 import { Box } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
 
+import { LatestFundraisings } from "lib/components/LatestFundraisings";
 import Footer from "lib/components/layout/Footer";
 import Header from "lib/components/layout/Header";
+import { LayoutContainer } from "lib/components/layout/LayoutContainer";
 import type { Fundraising } from "services/client";
 import {
   fetchLandingPageSectionData,
@@ -22,35 +24,31 @@ import {
 
 interface LandingPageProps {
   fundraisings: Fundraising[];
-  welcomeSectionTitle: string;
-  welcomeSectionDescription: string;
-  whySupportTitle: string;
-  whySupportDescription: string;
-  aboutUsTitle: string;
-  aboutUsDescription: string;
+  // welcomeSectionTitle: string;
+  // welcomeSectionDescription: string;
+  // whySupportTitle: string;
+  // whySupportDescription: string;
+  // aboutUsTitle: string;
+  // aboutUsDescription: string;
 }
-const LandingPage: NextPage<LandingPageProps> = () =>
-  // {
-  //   fundraisings,
-  //   welcomeSectionTitle,
-  //   welcomeSectionDescription,
-  //   whySupportTitle,
-  //   whySupportDescription,
-  //   aboutUsTitle,
-  //   aboutUsDescription,
-  // }
-  {
-    return (
-      <>
-        <Header isDark />
-        <Box as="main" />
-        <Footer />
-      </>
-    );
-  };
+const LandingPage: NextPage<LandingPageProps> = ({
+  fundraisings,
+}: LandingPageProps) => {
+  return (
+    <>
+      <Header isDark />
+      <Box as="main">
+        <LayoutContainer>
+          <LatestFundraisings fundraisings={fundraisings} />
+        </LayoutContainer>
+      </Box>
+      <Footer />
+    </>
+  );
+};
 
 export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
-  const fundraisings = await fetchFundraisings();
+  const fundraisings = await fetchFundraisings({ limit: 4 });
   const {
     titleEn: welcomeSectionTitle,
     descriptionEn: welcomeSectionDescription,

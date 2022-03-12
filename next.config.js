@@ -18,4 +18,8 @@ module.exports = withPWA({
   eslint: {
     dirs: ["src"],
   },
+  images: {
+    domains: ['images.ctfassets.net'],
+    deviceSizes: [400, 600, 800, 1200, 2000, 2900],
+  },
 });

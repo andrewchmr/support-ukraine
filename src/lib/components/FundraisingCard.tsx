@@ -1,18 +1,31 @@
-import { Box, Image, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { Box, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import NextImage from "next/image";
 
 import type { Fundraising } from "services/client";
 
-type FundraisingProps = Fundraising;
+import { ArrowLongRight } from "./icons/ArrowLongRight";
+
+interface Props extends Fundraising {
+  minWidth?: string | number;
+}
 
 export const FundraisingCard = ({
   fundraisingTitleEn,
   organisationNameEn,
   image,
   fundraisingLink,
-}: FundraisingProps) => {
+  minWidth,
+}: Props) => {
   return (
-    <LinkBox maxW="sm" borderWidth="1px" overflow="hidden">
-      <Image src={image.fields.file.url} alt={image.fields.title} />
+    <LinkBox minWidth={minWidth} maxW="sm" borderWidth="1px" overflow="hidden">
+      <NextImage
+        src={`https:${image.fields.file.url}`}
+        alt={image.fields.title}
+        width={256}
+        height={144}
+        layout="responsive"
+        objectFit="cover"
+      />
       <Box px="4" py="6">
         <Box
           mt="1"
@@ -24,16 +37,26 @@ export const FundraisingCard = ({
         >
           {fundraisingTitleEn}
         </Box>
-        <Box display="flex" mt="2" alignItems="center">
+        <Box
+          display="flex"
+          mt="2"
+          alignItems="center"
+          justifyContent="space-between"
+          gap={2}
+        >
           <LinkOverlay
             href={fundraisingLink}
             color="gray.600"
             fontSize="md"
             target="_blank"
             rel="noopener noreferrer"
+            isTruncated
           >
             {organisationNameEn}
           </LinkOverlay>
+          <Box as="span" display="flex" flexShrink={0}>
+            <ArrowLongRight />
+          </Box>
         </Box>
       </Box>
     </LinkBox>
