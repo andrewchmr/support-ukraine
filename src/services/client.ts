@@ -8,6 +8,7 @@ import {
 import type {
   IFundraising,
   IFundraisingFields,
+  ILandingPageFields,
 } from "../../@types/generated/contentful";
 
 export const client = createClient({
@@ -18,9 +19,22 @@ export const client = createClient({
 export interface Fundraising extends IFundraisingFields {
   id: IFundraising["sys"]["id"];
 }
-export async function fetchFundraisings(): Promise<Fundraising[]> {
+export async function fetchFundraisings(query?: any): Promise<Fundraising[]> {
   const { items: fundraisings } = await client.getEntries<IFundraisingFields>({
     content_type: "fundraising",
+    ...query,
   });
   return fundraisings.map(({ fields, sys }) => ({ ...fields, id: sys.id }));
+}
+
+export async function fetchLandingPageSectionData(
+  section: ILandingPageFields["sectionId"]
+): Promise<ILandingPageFields> {
+  const {
+    items: [sectionData],
+  } = await client.getEntries<ILandingPageFields>({
+    content_type: "landingPage",
+    "fields.sectionId": section,
+  });
+  return sectionData.fields;
 }
