@@ -18,10 +18,10 @@ interface LandingPageProps {
   email: string;
   welcomeSectionTitle: string;
   welcomeSectionDescription: string;
-  whySupportTitle: string;
-  whySupportDescription: string;
-  aboutUsTitle: string;
-  aboutUsDescription: string;
+  // whySupportTitle: string;
+  // whySupportDescription: string;
+  // aboutUsTitle: string;
+  // aboutUsDescription: string;
 }
 const LandingPage: NextPage<LandingPageProps> = ({
   fundraisings,
