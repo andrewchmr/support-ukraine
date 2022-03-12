@@ -9,7 +9,6 @@ import Header from "lib/components/layout/Header";
 import { LayoutContainer } from "lib/components/layout/LayoutContainer";
 import type { Fundraising } from "services/client";
 import {
-  fetchContactData,
   fetchLandingPageSectionData,
   fetchFundraisings,
 } from "services/client";
@@ -53,7 +52,6 @@ const LandingPage: NextPage<LandingPageProps> = ({
 
 export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
   const fundraisings = await fetchFundraisings({ limit: 4 });
-  const { email } = await fetchContactData();
   const {
     titleEn: welcomeSectionTitle,
     descriptionEn: welcomeSectionDescription,
@@ -66,7 +64,6 @@ export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
   return {
     props: {
       fundraisings,
-      email,
       welcomeSectionTitle,
       welcomeSectionDescription,
       whySupportTitle,

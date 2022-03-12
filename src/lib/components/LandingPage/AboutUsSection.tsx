@@ -15,8 +15,22 @@ export function AboutUsSection({
     <Flex id="about_us_section" py="16">
       <Box flex={1}>
         <LineAboveTitle bgColor="#3A3A3A" />
-        <Text color="#3A3A3A">{aboutUsTitle}</Text>
-        <Text color="#3A3A3A">{aboutUsDescription}</Text>
+        <Text
+          fontWeight="semibold"
+          fontSize="32px"
+          lineHeight="46px"
+          color="#3A3A3A"
+        >
+          {aboutUsTitle}
+        </Text>
+        <Text
+          fontWeight="medium"
+          fontSize="20px"
+          lineHeight="30px"
+          color="#3A3A3A"
+        >
+          {aboutUsDescription}
+        </Text>
       </Box>
       <Box flex={1} />
     </Flex>
