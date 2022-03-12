@@ -3,31 +3,6 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
-export interface IContactUsFields {
-  /** Email */
-  email: string;
-
-  /** Номер телефону */
-  phoneNumber?: string | undefined;
-}
-
-export interface IContactUs extends Entry<IContactUsFields> {
-  sys: {
-    id: string;
-    type: string;
-    createdAt: string;
-    updatedAt: string;
-    locale: string;
-    contentType: {
-      sys: {
-        id: "contactUs";
-        linkType: "ContentType";
-        type: "Link";
-      };
-    };
-  };
-}
-
 export interface IFundraisingFields {
   /** Назва збірки коштів EN */
   fundraisingTitleEn: string;
@@ -52,6 +27,9 @@ export interface IFundraisingFields {
 
   /** Зображення */
   image: Asset;
+
+  /** Валюта */
+  currency?: "pln" | "usd" | undefined;
 }
 
 /** Збірка коштів для української армії */
@@ -115,7 +93,7 @@ export interface ILandingPage extends Entry<ILandingPageFields> {
   };
 }
 
-export type CONTENT_TYPE = "contactUs" | "fundraising" | "landingPage";
+export type CONTENT_TYPE = "fundraising" | "landingPage";
 
 export type LOCALE_CODE = "en-US";
 
