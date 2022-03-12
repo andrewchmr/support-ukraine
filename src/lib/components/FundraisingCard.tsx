@@ -2,16 +2,19 @@ import { Box, Image, LinkBox, LinkOverlay } from "@chakra-ui/react";
 
 import type { Fundraising } from "services/client";
 
-type FundraisingProps = Fundraising;
+interface Props extends Fundraising {
+  minWidth?: string | number;
+}
 
 export const FundraisingCard = ({
   fundraisingTitleEn,
   organisationNameEn,
   image,
   fundraisingLink,
-}: FundraisingProps) => {
+  minWidth,
+}: Props) => {
   return (
-    <LinkBox maxW="sm" borderWidth="1px" overflow="hidden">
+    <LinkBox minWidth={minWidth} maxW="sm" borderWidth="1px" overflow="hidden">
       <Image src={image.fields.file.url} alt={image.fields.title} />
       <Box px="4" py="6">
         <Box
