@@ -20,7 +20,7 @@ const Footer = () => {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Box display="flex" alignItems="center">
+        <Box id="contact" display="flex" alignItems="center">
           <Box gap="2" display="flex" marginRight={10}>
             <Facebook />
             <Telegram />
