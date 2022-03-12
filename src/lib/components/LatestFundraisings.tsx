@@ -37,7 +37,13 @@ export const LatestFundraisings = ({ fundraisings }: Props) => {
           Latest fundraisings
         </Heading>
         <NextLink href="/fundraisings" passHref>
-          <Link display="flex" alignItems="center" gap="2" fontSize="lg">
+          <Link
+            display="flex"
+            alignItems="center"
+            gap="2"
+            fontSize="lg"
+            color="green.700"
+          >
             See all <ArrowRight />
           </Link>
         </NextLink>
