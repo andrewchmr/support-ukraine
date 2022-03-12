@@ -4,6 +4,7 @@ import { Icon, Box, Button, Flex, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 import { LayoutContainer } from "../layout/LayoutContainer";
+import { LineAboveTitle } from "../LineAboveTitle";
 
 const emblemContourWidth = 283;
 const emblemContourHeight = 323;
@@ -25,22 +26,23 @@ const EmblemContour = (props: IconProps) => (
   </Icon>
 );
 
+const shiftWidth = 32;
+const numberOfEmblems = 3;
+
 interface WelcomeSectionProps extends BoxProps {
   welcomeSectionTitle: string;
   welcomeSectionDescription: string;
-  email: string;
 }
 export function WelcomeSection({
-  email,
   welcomeSectionTitle,
   welcomeSectionDescription,
   ...props
 }: WelcomeSectionProps) {
   return (
     <LayoutContainer py={8} outerProps={{ bgColor: "#013B2F" }} {...props}>
-      <Flex justify="flex-end">Mail: {email}</Flex>
       <Flex>
         <Box flex={1}>
+          <LineAboveTitle />
           <Text
             fontWeight="semibold"
             fontSize="4xl"
@@ -54,19 +56,29 @@ export function WelcomeSection({
           </Text>
           <Button
             mt="12"
+            py="3"
+            px="5"
             bgColor="#F6CC25"
             color="#013B2F"
             fontSize="lg"
             lineHeight="22px"
             fontWeight="semibold"
             borderRadius={0}
-            rightIcon={<ChevronRightIcon />}
+            rightIcon={<ChevronRightIcon color="#013B2F" w="6" h="6" />}
           >
             See fundraisings
           </Button>
         </Box>
-        <Flex flex={1} justify="center">
-          <Box height={emblemContourHeight} position="relative">
+        <Flex
+          display={{ base: "none", lg: "flex" }}
+          flex={1}
+          justify="flex-end"
+        >
+          <Box
+            height={emblemContourHeight}
+            width={`${emblemContourWidth + shiftWidth * numberOfEmblems}px`}
+            position="relative"
+          >
             <Box
               position="relative"
               zIndex={1}
@@ -83,9 +95,9 @@ export function WelcomeSection({
                 height={emblemContourHeight}
               />
             </Box>
-            <EmblemContour left="32px" />
-            <EmblemContour left="64px" />
-            <EmblemContour left="96px" />
+            {new Array(numberOfEmblems).fill(0).map((_, index) => (
+              <EmblemContour left={`${shiftWidth * (index + 1)}px`} />
+            ))}
           </Box>
         </Flex>
       </Flex>

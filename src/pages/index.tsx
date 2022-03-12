@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
 
+import { AboutUsSection } from "lib/components/LandingPage/AboutUsSection";
 import { WelcomeSection } from "lib/components/LandingPage/WelcomeSection";
 import { LatestFundraisings } from "lib/components/LatestFundraisings";
 import Footer from "lib/components/layout/Footer";
@@ -8,42 +9,40 @@ import Header from "lib/components/layout/Header";
 import { LayoutContainer } from "lib/components/layout/LayoutContainer";
 import type { Fundraising } from "services/client";
 import {
-  fetchContactData,
   fetchLandingPageSectionData,
   fetchFundraisings,
 } from "services/client";
 
 interface LandingPageProps {
   fundraisings: Fundraising[];
-  email: string;
   welcomeSectionTitle: string;
   welcomeSectionDescription: string;
   // whySupportTitle: string;
   // whySupportDescription: string;
-  // aboutUsTitle: string;
-  // aboutUsDescription: string;
+  aboutUsTitle: string;
+  aboutUsDescription: string;
 }
 const LandingPage: NextPage<LandingPageProps> = ({
   fundraisings,
-  email,
   welcomeSectionTitle,
   welcomeSectionDescription,
-}: // whySupportTitle,
-// whySupportDescription,
-// aboutUsTitle,
-// aboutUsDescription,
-LandingPageProps) => {
+  aboutUsTitle,
+  aboutUsDescription,
+}: LandingPageProps) => {
   return (
     <>
       <Header isDark />
       <Box as="main">
         <WelcomeSection
-          email={email}
           welcomeSectionTitle={welcomeSectionTitle}
           welcomeSectionDescription={welcomeSectionDescription}
         />
         <LayoutContainer>
           <LatestFundraisings fundraisings={fundraisings} />
+          <AboutUsSection
+            aboutUsTitle={aboutUsTitle}
+            aboutUsDescription={aboutUsDescription}
+          />
         </LayoutContainer>
       </Box>
       <Footer />
@@ -53,7 +52,6 @@ LandingPageProps) => {
 
 export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
   const fundraisings = await fetchFundraisings({ limit: 4 });
-  const { email } = await fetchContactData();
   const {
     titleEn: welcomeSectionTitle,
     descriptionEn: welcomeSectionDescription,
@@ -66,7 +64,6 @@ export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
   return {
     props: {
       fundraisings,
-      email,
       welcomeSectionTitle,
       welcomeSectionDescription,
       whySupportTitle,
