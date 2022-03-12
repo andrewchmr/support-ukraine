@@ -2,6 +2,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import type { BoxProps, IconProps } from "@chakra-ui/react";
 import { Icon, Box, Button, Flex, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
+import NextLink from "next/link";
 
 import { LayoutContainer } from "../layout/LayoutContainer";
 import { LineAboveTitle } from "../LineAboveTitle";
@@ -54,20 +55,25 @@ export function WelcomeSection({
           <Text mt={3} fontSize="2xl" lineHeight="36px" color="#F6CC25">
             {welcomeSectionDescription}
           </Text>
-          <Button
-            mt="12"
-            py="3"
-            px="5"
-            bgColor="#F6CC25"
-            color="#013B2F"
-            fontSize="lg"
-            lineHeight="22px"
-            fontWeight="semibold"
-            borderRadius={0}
-            rightIcon={<ChevronRightIcon color="#013B2F" w="6" h="6" />}
-          >
-            See fundraisings
-          </Button>
+          <NextLink href="/fundraisings" passHref>
+            <Button
+              as="a"
+              mt="12"
+              py="3"
+              px="5"
+              bgColor="#F6CC25"
+              color="#013B2F"
+              _hover={{ bgColor: "#F6CC25", textDecor: "underline" }}
+              _active={{ bgColor: "#FFDE5B", textDecor: "underline" }}
+              fontSize="lg"
+              lineHeight="22px"
+              fontWeight="semibold"
+              borderRadius={0}
+              rightIcon={<ChevronRightIcon color="#013B2F" w="6" h="6" />}
+            >
+              See fundraisings
+            </Button>
+          </NextLink>
         </Box>
         <Flex
           display={{ base: "none", lg: "flex" }}
