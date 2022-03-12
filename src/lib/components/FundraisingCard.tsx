@@ -1,21 +1,18 @@
 import { Box, Image, LinkBox, LinkOverlay } from "@chakra-ui/react";
 
-interface Props {
-  imageUrl: string;
-  title: string;
-  organization: string;
-  link: string;
-}
+import type { Fundraising } from "services/client";
+
+type FundraisingProps = Fundraising;
 
 export const FundraisingCard = ({
-  imageUrl,
-  title,
-  organization,
-  link,
-}: Props) => {
+  fundraisingTitleEn,
+  organisationNameEn,
+  image,
+  fundraisingLink,
+}: FundraisingProps) => {
   return (
     <LinkBox maxW="sm" borderWidth="1px" overflow="hidden">
-      <Image src={imageUrl} alt={title} />
+      <Image src={image.fields.file.url} alt={image.fields.title} />
       <Box px="4" py="6">
         <Box
           mt="1"
@@ -25,17 +22,17 @@ export const FundraisingCard = ({
           fontSize="xl"
           noOfLines={2}
         >
-          {title}
+          {fundraisingTitleEn}
         </Box>
         <Box display="flex" mt="2" alignItems="center">
           <LinkOverlay
-            href={link}
+            href={fundraisingLink}
             color="gray.600"
             fontSize="md"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {organization}
+            {organisationNameEn}
           </LinkOverlay>
         </Box>
       </Box>

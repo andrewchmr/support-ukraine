@@ -16,12 +16,16 @@
     "up-latest": "yarn up --latest",
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "gen:contentful": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.3",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
+    "contentful": "^9.1.13",
+    "contentful-management": "^8.2.0",
+    "dotenv": "^16.0.0",
     "framer-motion": "^5.6.0",
     "next": "^12.1.0",
     "next-pwa": "^5.4.4",
@@ -34,6 +38,7 @@
     "@commitlint/config-conventional": "^16.2.1",
     "@types/react": "^17.0.39",
     "commitlint": "^16.2.1",
+    "contentful-typescript-codegen": "^3.2.3",
     "eslint": "^8.9.0",
     "eslint-config-next": "^12.1.0",
     "eslint-config-sznm": "^0.2.1",
