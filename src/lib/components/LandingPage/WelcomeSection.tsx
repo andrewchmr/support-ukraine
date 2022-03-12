@@ -26,6 +26,9 @@ const EmblemContour = (props: IconProps) => (
   </Icon>
 );
 
+const shiftWidth = 32;
+const numberOfEmblems = 3;
+
 interface WelcomeSectionProps extends BoxProps {
   welcomeSectionTitle: string;
   welcomeSectionDescription: string;
@@ -66,8 +69,16 @@ export function WelcomeSection({
             See fundraisings
           </Button>
         </Box>
-        <Flex display={{ base: "none", lg: "flex" }} flex={1} justify="center">
-          <Box height={emblemContourHeight} position="relative">
+        <Flex
+          display={{ base: "none", lg: "flex" }}
+          flex={1}
+          justify="flex-end"
+        >
+          <Box
+            height={emblemContourHeight}
+            width={`${emblemContourWidth + shiftWidth * numberOfEmblems}px`}
+            position="relative"
+          >
             <Box
               position="relative"
               zIndex={1}
@@ -84,9 +95,9 @@ export function WelcomeSection({
                 height={emblemContourHeight}
               />
             </Box>
-            <EmblemContour left="32px" />
-            <EmblemContour left="64px" />
-            <EmblemContour left="96px" />
+            {new Array(numberOfEmblems).fill(0).map((_, index) => (
+              <EmblemContour left={`${shiftWidth * (index + 1)}px`} />
+            ))}
           </Box>
         </Flex>
       </Flex>
