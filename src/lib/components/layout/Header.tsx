@@ -9,7 +9,7 @@ const Header = () => {
       </Heading>
 
       <Box marginLeft="auto">
-        <Link href="/list-of-fundraisers">List Of Fundraisers</Link>
+        <Link href="/fundraisings">Fundraisings</Link>
       </Box>
     </Flex>
   );

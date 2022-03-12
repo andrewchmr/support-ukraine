@@ -10,11 +10,11 @@ const property = {
   link: "https://zrzutka.pl",
 };
 
-const ListOfFundraisers = () => {
+const Fundraisings = () => {
   return (
     <>
       <Heading as="h1" fontSize={{ base: "lg", sm: "3xl" }}>
-        List Of Fundraisers
+        Fundraisings
       </Heading>
       <Divider marginTop={10} />
       <SimpleGrid marginTop={10} columns={[1, 2, 3, 4]} spacing="24px">
@@ -28,4 +28,4 @@ const ListOfFundraisers = () => {
   );
 };
 
-export default ListOfFundraisers;
+export default Fundraisings;
