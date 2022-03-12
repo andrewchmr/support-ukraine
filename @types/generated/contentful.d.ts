@@ -3,6 +3,31 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
+export interface IContactUsFields {
+  /** Email */
+  email: string;
+
+  /** Номер телефону */
+  phoneNumber?: string | undefined;
+}
+
+export interface IContactUs extends Entry<IContactUsFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "contactUs";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IFundraisingFields {
   /** Назва збірки коштів EN */
   fundraisingTitleEn: string;
@@ -48,7 +73,49 @@ export interface IFundraising extends Entry<IFundraisingFields> {
   };
 }
 
-export type CONTENT_TYPE = "fundraising";
+export interface ILandingPageFields {
+  /** ID секції */
+  sectionId: "welcome_section" | "why_support_section" | "about_us_section";
+
+  /** Заголовок En */
+  titleEn: string;
+
+  /** Заголовок Pl */
+  titlePl?: string | undefined;
+
+  /** Заголовок Ua */
+  titleUa?: string | undefined;
+
+  /** Опис En */
+  descriptionEn: string;
+
+  /** Опис Pl */
+  descriptionPl?: string | undefined;
+
+  /** Опис Ua */
+  descriptionUa?: string | undefined;
+}
+
+/** Елементи, що знаходяться на головній сторінці */
+
+export interface ILandingPage extends Entry<ILandingPageFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "landingPage";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export type CONTENT_TYPE = "contactUs" | "fundraising" | "landingPage";
 
 export type LOCALE_CODE = "en-US";
 
