@@ -1,18 +1,19 @@
-import type { BoxProps } from "@chakra-ui/react";
+import type { FlexProps } from "@chakra-ui/react";
 import { Box, Text, Flex } from "@chakra-ui/react";
 
 import { LineAboveTitle } from "../LineAboveTitle";
 
-interface AboutUsSectionProps extends BoxProps {
+interface AboutUsSectionProps extends FlexProps {
   aboutUsTitle: string;
   aboutUsDescription: string;
 }
 export function AboutUsSection({
   aboutUsTitle,
   aboutUsDescription,
+  ...props
 }: AboutUsSectionProps) {
   return (
-    <Flex id="about_us" py="16">
+    <Flex id="about_us" py="16" {...props}>
       <Box flex={1}>
         <LineAboveTitle bgColor="black.base" />
         <Text

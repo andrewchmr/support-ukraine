@@ -5,7 +5,7 @@ import { AboutUsSection } from "lib/components/LandingPage/AboutUsSection";
 import { WelcomeSection } from "lib/components/LandingPage/WelcomeSection";
 import { LatestFundraisings } from "lib/components/LatestFundraisings";
 import Footer from "lib/components/layout/Footer";
-import Header from "lib/components/layout/Header";
+import { Header } from "lib/components/layout/Header";
 import { LayoutContainer } from "lib/components/layout/LayoutContainer";
 import type { Fundraising } from "services/client";
 import {

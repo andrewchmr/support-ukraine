@@ -40,7 +40,11 @@ export function WelcomeSection({
   ...props
 }: WelcomeSectionProps) {
   return (
-    <LayoutContainer py={8} outerProps={{ bgColor: "green.dark" }} {...props}>
+    <LayoutContainer
+      py={8}
+      outerProps={{ bgColor: "green.dark", mt: "-1px" }}
+      {...props}
+    >
       <Flex>
         <Box flex={1}>
           <LineAboveTitle />
