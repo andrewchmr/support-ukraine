@@ -14,7 +14,6 @@ import {
   fetchFundraisings,
 } from "services/client";
 
-
 interface LandingPageProps {
   fundraisings: Fundraising[];
   welcomeSectionTitle: string;
