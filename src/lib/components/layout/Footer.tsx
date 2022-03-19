@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 
 import { Crest } from "../icons/Crest";
 import { Facebook } from "../icons/Facebook";
+import { MailCircle } from "../icons/MailCircle";
 import { Telegram } from "../icons/Telegram";
 
 import { LayoutContainer } from "./LayoutContainer";
@@ -32,6 +33,9 @@ const Footer = () => {
           <Box gap="2" display="flex" marginRight={["unset", 10]}>
             <Facebook />
             <Telegram />
+            <Box as="a" href="mailto:contact@ukraine-army.help">
+              <MailCircle />
+            </Box>
           </Box>
 
           <Box
@@ -47,7 +51,7 @@ const Footer = () => {
             >
               Contact Us
             </Text>
-            example@gmail.com
+            contact@ukraine-army.help
           </Box>
         </Box>
 
