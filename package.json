@@ -17,7 +17,9 @@
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
     "prepare": "husky install",
-    "gen:contentful": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
+    "gen:contentful": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
+    "gen:theme-typings": "chakra-cli tokens src/lib/styles/customTheme",
+    "postinstall": "npm run gen:theme-typings"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
@@ -37,6 +39,7 @@
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^1.9.0",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/react": "^17.0.39",
     "commitlint": "^16.2.1",

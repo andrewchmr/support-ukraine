@@ -41,7 +41,7 @@ const Header = ({ isDark = false, ...props }: HeaderProps) => {
       alignItems="center"
       h="72px"
       outerProps={{
-        bgColor: isDark ? "#013B2F" : undefined,
+        bgColor: isDark ? "green.dark" : undefined,
       }}
       {...props}
     >

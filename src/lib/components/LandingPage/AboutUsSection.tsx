@@ -14,12 +14,12 @@ export function AboutUsSection({
   return (
     <Flex id="about_us" py="16">
       <Box flex={1}>
-        <LineAboveTitle bgColor="#3A3A3A" />
+        <LineAboveTitle bgColor="black.base" />
         <Text
           fontWeight="semibold"
           fontSize="32px"
           lineHeight="46px"
-          color="#3A3A3A"
+          color="black.base"
           as="h3"
         >
           {aboutUsTitle}
@@ -28,7 +28,7 @@ export function AboutUsSection({
           fontWeight="medium"
           fontSize="20px"
           lineHeight="30px"
-          color="#3A3A3A"
+          color="black.base"
         >
           {aboutUsDescription}
         </Text>

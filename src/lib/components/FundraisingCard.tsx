@@ -1,4 +1,4 @@
-import { Box, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { Box, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 import type { Fundraising } from "services/client";
@@ -31,6 +31,7 @@ export const FundraisingCard = ({
           lineHeight="tight"
           fontSize="xl"
           noOfLines={2}
+          color="black.base"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -43,9 +44,9 @@ export const FundraisingCard = ({
           justifyContent="space-between"
           gap={2}
         >
-          <Box color="gray.600" fontSize="md" noOfLines={4}>
+          <Text color="grey.dark" fontSize="md" noOfLines={4}>
             {fundraisingDescriptionEn}
-          </Box>
+          </Text>
           <Box as="span" display="flex" flexShrink={0}>
             <ArrowLongRight />
           </Box>
