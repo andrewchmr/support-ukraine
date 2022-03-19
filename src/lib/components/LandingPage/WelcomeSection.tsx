@@ -40,7 +40,7 @@ export function WelcomeSection({
   ...props
 }: WelcomeSectionProps) {
   return (
-    <LayoutContainer py={8} outerProps={{ bgColor: "#013B2F" }} {...props}>
+    <LayoutContainer py={8} outerProps={{ bgColor: "green.dark" }} {...props}>
       <Flex>
         <Box flex={1}>
           <LineAboveTitle />
@@ -48,12 +48,18 @@ export function WelcomeSection({
             fontWeight="semibold"
             fontSize="4xl"
             lineHeight="56px"
-            color="#F6CC25"
+            color="yellow.base"
             as="h1"
           >
             {welcomeSectionTitle}
           </Text>
-          <Text as="h2" mt={3} fontSize="2xl" lineHeight="36px" color="#F6CC25">
+          <Text
+            as="h2"
+            mt={3}
+            fontSize="2xl"
+            lineHeight="36px"
+            color="yellow.base"
+          >
             {welcomeSectionDescription}
           </Text>
           <NextLink href="/fundraisings" passHref>
@@ -62,15 +68,15 @@ export function WelcomeSection({
               mt="12"
               py="3"
               px="5"
-              bgColor="#F6CC25"
-              color="#013B2F"
-              _hover={{ bgColor: "#F6CC25", textDecor: "underline" }}
-              _active={{ bgColor: "#FFDE5B", textDecor: "underline" }}
+              bgColor="yellow.base"
+              color="green.dark"
+              _hover={{ bgColor: "yellow.base", textDecor: "underline" }}
+              _active={{ bgColor: "yellow.light", textDecor: "underline" }}
               fontSize="lg"
               lineHeight="22px"
               fontWeight="semibold"
               borderRadius={0}
-              rightIcon={<ChevronRightIcon color="#013B2F" w="6" h="6" />}
+              rightIcon={<ChevronRightIcon color="green.dark" w="6" h="6" />}
             >
               See fundraisings
             </Button>

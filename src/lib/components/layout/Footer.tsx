@@ -13,7 +13,7 @@ const Footer = () => {
       marginTop="auto"
       as="footer"
       alignItems="center"
-      backgroundColor="#F6CC25"
+      backgroundColor="yellow.base"
       py="6"
     >
       <LayoutContainer

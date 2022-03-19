@@ -16,7 +16,7 @@ export default function FundraisingsPage({ fundraisings }: FundraisingsProps) {
       <LayoutContainer>
         <Heading as="h1" fontWeight="bold" fontSize={{ base: "lg", sm: "3xl" }}>
           Fundraisings
-          <Text marginLeft={2} as="span" color="gray.300">
+          <Text marginLeft={2} as="span" color="grey.base">
             ({fundraisings.length})
           </Text>
         </Heading>
