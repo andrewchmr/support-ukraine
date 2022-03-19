@@ -6,32 +6,31 @@ interface Props {
   imageUrl?: string;
 }
 
-export const DESC =
+const DESC =
   "Guidance on official and verified campaigns supporting the Ukrainian Army and defence. Find verified fundraisers and foundations to help the Ukrainian Army!";
-export const TITLE =
+const TITLE =
   "Verified support for the Ukrainian Army and defence | Help Ukraine Army";
+const IMAGE_URL = "https://ukraine-army.help/preview.jpg";
 
 export const SEOTags = ({
   title = TITLE,
   description = DESC,
-  imageUrl,
+  imageUrl = IMAGE_URL,
 }: Props) => {
   return (
     <Head>
       <title>{title}</title>
-      {description && <meta name="description" content={description} />}
+      <meta name="description" content={description} />
       <meta name="og:title" property="og:title" content={title} />
       <meta name="twitter:title" content={title} />
-      {description && (
-        <meta
-          name="og:description"
-          property="og:description"
-          content={description}
-        />
-      )}
-      {description && <meta name="twitter:description" content={description} />}
-      {imageUrl && <meta property="og:image" content={imageUrl} />}
-      {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+      <meta
+        name="og:description"
+        property="og:description"
+        content={description}
+      />
+      <meta name="twitter:description" content={description} />
+      <meta property="og:image" content={imageUrl} />
+      <meta name="twitter:image" content={imageUrl} />
     </Head>
   );
 };
