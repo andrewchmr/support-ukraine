@@ -11,7 +11,7 @@ interface Props {
   image: Asset | undefined;
 }
 
-export function Section({ title, description, image, id }: Props) {
+export function LandingSection({ title, description, image, id }: Props) {
   if (!image?.fields.file.url) {
     return null;
   }

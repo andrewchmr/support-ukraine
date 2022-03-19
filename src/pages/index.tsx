@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import type { Asset } from "contentful";
 import type { GetStaticProps, NextPage } from "next";
 
-import { Section } from "lib/components/LandingPage/Section";
+import { LandingSection } from "lib/components/LandingPage/LandingSection";
 import { WelcomeSection } from "lib/components/LandingPage/WelcomeSection";
 import { LatestFundraisings } from "lib/components/LatestFundraisings";
 import Footer from "lib/components/layout/Footer";
@@ -48,12 +48,12 @@ const LandingPage: NextPage<LandingPageProps> = ({
         />
         <LayoutContainer>
           <LatestFundraisings fundraisings={fundraisings} />
-          <Section
+          <LandingSection
             title={ourGoalTitle}
             description={ourGoalDescription}
             image={ourGoalImage}
           />
-          <Section
+          <LandingSection
             id="about_us"
             title={aboutUsTitle}
             description={aboutUsDescription}
