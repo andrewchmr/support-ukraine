@@ -33,7 +33,7 @@ const Footer = () => {
           <Box gap="2" display="flex" marginRight={["unset", 10]}>
             <Facebook />
             <Telegram />
-            <Box as="a" href="mailto:contact@ukraine-army.help">
+            <Box as="a" href="mailto:info@ukraine-army.help">
               <MailCircle />
             </Box>
           </Box>
@@ -51,7 +51,7 @@ const Footer = () => {
             >
               Contact Us
             </Text>
-            contact@ukraine-army.help
+            info@ukraine-army.help
           </Box>
         </Box>
 

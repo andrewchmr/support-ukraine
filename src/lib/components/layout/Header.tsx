@@ -72,7 +72,7 @@ const Header = ({ isDark = false, ...props }: HeaderProps) => {
           );
         })}
       </Box>
-      <Box as="a" href="mailto:contact@ukraine-army.help">
+      <Box as="a" href="mailto:info@ukraine-army.help">
         <Mail />
       </Box>
     </LayoutContainer>
