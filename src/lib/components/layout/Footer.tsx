@@ -1,13 +1,12 @@
+import type { BoxProps } from "@chakra-ui/react";
 import { Box, Text } from "@chakra-ui/react";
 
 import { Crest } from "../icons/Crest";
-import { Facebook } from "../icons/Facebook";
-import { MailCircle } from "../icons/MailCircle";
-import { Telegram } from "../icons/Telegram";
+import { SocialIcons } from "../icons/SocialIcons";
 
 import { LayoutContainer } from "./LayoutContainer";
 
-const Footer = () => {
+const Footer = (props: BoxProps) => {
   return (
     <Box
       marginTop="auto"
@@ -15,6 +14,7 @@ const Footer = () => {
       alignItems="center"
       backgroundColor="yellow.base"
       py="6"
+      {...props}
     >
       <LayoutContainer
         display="flex"
@@ -30,13 +30,7 @@ const Footer = () => {
           justifyContent={["space-between", "center"]}
           flexDirection={["row-reverse", "row"]}
         >
-          <Box gap="2" display="flex" marginRight={["unset", 10]}>
-            <Facebook />
-            <Telegram />
-            <Box as="a" href="mailto:info@ukraine-army.help">
-              <MailCircle />
-            </Box>
-          </Box>
+          <SocialIcons />
 
           <Box
             display="flex"
