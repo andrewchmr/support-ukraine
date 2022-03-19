@@ -1,4 +1,4 @@
-import { Box, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
+import { Flex, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 import type { Fundraising } from "services/client";
@@ -14,7 +14,14 @@ export const FundraisingCard = ({
   fundraisingLink,
 }: Props) => {
   return (
-    <LinkBox width="100%" maxW="sm" borderWidth="1px" overflow="hidden">
+    <LinkBox
+      width="100%"
+      display="flex"
+      flexDirection="column"
+      maxW="sm"
+      borderWidth="1px"
+      overflow="hidden"
+    >
       <NextImage
         src={`https:${image.fields.file.url}`}
         alt={image.fields.title}
@@ -23,7 +30,14 @@ export const FundraisingCard = ({
         layout="responsive"
         objectFit="cover"
       />
-      <Box px="4" py="6">
+      <Flex
+        direction="column"
+        height="100%"
+        justify="space-between"
+        flex="1"
+        px="4"
+        py="6"
+      >
         <LinkOverlay
           href={fundraisingLink}
           mt="1"
@@ -37,21 +51,15 @@ export const FundraisingCard = ({
         >
           {organisationNameEn}
         </LinkOverlay>
-        <Box
-          display="flex"
-          mt="2"
-          alignItems="center"
-          justifyContent="space-between"
-          gap={2}
-        >
+        <Flex my="2" alignItems="center" justifyContent="space-between" gap={2}>
           <Text color="grey.dark" fontSize="md" noOfLines={4}>
             {fundraisingDescriptionEn}
           </Text>
-          <Box as="span" display="flex" flexShrink={0}>
-            <ArrowLongRight />
-          </Box>
-        </Box>
-      </Box>
+        </Flex>
+        <Flex as="span" flexShrink={0} justifyContent="end">
+          <ArrowLongRight />
+        </Flex>
+      </Flex>
     </LinkBox>
   );
 };
