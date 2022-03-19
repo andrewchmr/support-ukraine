@@ -46,8 +46,8 @@ export function WelcomeSection({
           <LineAboveTitle />
           <Text
             fontWeight="semibold"
-            fontSize="4xl"
-            lineHeight="56px"
+            fontSize={["xl", "4xl"]}
+            lineHeight={["26px", "56px"]}
             color="yellow.base"
             as="h1"
           >
@@ -56,8 +56,8 @@ export function WelcomeSection({
           <Text
             as="h2"
             mt={3}
-            fontSize="2xl"
-            lineHeight="36px"
+            fontSize={["md", "2xl"]}
+            lineHeight={["20px", "36px"]}
             color="yellow.base"
           >
             {welcomeSectionDescription}

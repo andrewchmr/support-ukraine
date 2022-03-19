@@ -46,12 +46,12 @@ const Footer = () => {
             <Text
               whiteSpace="nowrap"
               fontWeight="bold"
-              fontSize="xl"
+              fontSize={["md", "xl"]}
               marginRight={5}
             >
               Contact Us
             </Text>
-            info@ukraine-army.help
+            <Text fontSize={["sm", "md"]}>info@ukraine-army.help</Text>
           </Box>
         </Box>
 
@@ -61,7 +61,9 @@ const Footer = () => {
           marginTop={{ base: "6", md: "unset" }}
         >
           <Crest />
-          <Text marginLeft={4}>Ukraine {new Date().getFullYear()}</Text>
+          <Text marginLeft={4} fontSize={["sm", "md"]}>
+            Ukraine {new Date().getFullYear()}
+          </Text>
         </Box>
       </LayoutContainer>
     </Box>
