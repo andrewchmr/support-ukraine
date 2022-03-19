@@ -20,6 +20,7 @@ export function AboutUsSection({
           fontSize="32px"
           lineHeight="46px"
           color="#3A3A3A"
+          as="h3"
         >
           {aboutUsTitle}
         </Text>

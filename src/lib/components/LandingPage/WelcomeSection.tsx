@@ -49,10 +49,11 @@ export function WelcomeSection({
             fontSize="4xl"
             lineHeight="56px"
             color="#F6CC25"
+            as="h1"
           >
             {welcomeSectionTitle}
           </Text>
-          <Text mt={3} fontSize="2xl" lineHeight="36px" color="#F6CC25">
+          <Text as="h2" mt={3} fontSize="2xl" lineHeight="36px" color="#F6CC25">
             {welcomeSectionDescription}
           </Text>
           <NextLink href="/fundraisings" passHref>
