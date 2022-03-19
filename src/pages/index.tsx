@@ -24,6 +24,9 @@ interface LandingPageProps {
   aboutUsTitle: string;
   aboutUsDescription: string;
   aboutUsImage: Asset | undefined;
+  ourGoalTitle: string;
+  ourGoalDescription: string;
+  ourGoalImage: Asset | undefined;
 }
 const LandingPage: NextPage<LandingPageProps> = ({
   fundraisings,
@@ -32,6 +35,9 @@ const LandingPage: NextPage<LandingPageProps> = ({
   aboutUsTitle,
   aboutUsDescription,
   aboutUsImage,
+  ourGoalTitle,
+  ourGoalDescription,
+  ourGoalImage,
 }: LandingPageProps) => {
   return (
     <>
@@ -43,6 +49,11 @@ const LandingPage: NextPage<LandingPageProps> = ({
         />
         <LayoutContainer>
           <LatestFundraisings fundraisings={fundraisings} />
+          <Section
+            title={ourGoalTitle}
+            description={ourGoalDescription}
+            image={ourGoalImage}
+          />
           <Section
             id="about_us"
             title={aboutUsTitle}
@@ -62,8 +73,11 @@ export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
     titleEn: welcomeSectionTitle,
     descriptionEn: welcomeSectionDescription,
   } = await fetchLandingPageSectionData("welcome_section");
-  const { titleEn: whySupportTitle, descriptionEn: whySupportDescription } =
-    await fetchLandingPageSectionData("why_support_section");
+  const {
+    titleEn: ourGoalTitle,
+    descriptionEn: ourGoalDescription,
+    image: ourGoalImage,
+  } = await fetchLandingPageSectionData("our_goal_section");
   const {
     titleEn: aboutUsTitle,
     descriptionEn: aboutUsDescription,
@@ -75,8 +89,9 @@ export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
       fundraisings,
       welcomeSectionTitle,
       welcomeSectionDescription,
-      whySupportTitle,
-      whySupportDescription,
+      ourGoalTitle,
+      ourGoalDescription,
+      ourGoalImage,
       aboutUsTitle,
       aboutUsDescription,
       aboutUsImage,

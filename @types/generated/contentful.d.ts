@@ -53,7 +53,7 @@ export interface IFundraising extends Entry<IFundraisingFields> {
 
 export interface ILandingPageFields {
   /** ID секції */
-  sectionId: "welcome_section" | "why_support_section" | "about_us_section";
+  sectionId: "welcome_section" | "about_us_section" | "our_goal_section";
 
   /** Заголовок En */
   titleEn: string;
@@ -96,7 +96,40 @@ export interface ILandingPage extends Entry<ILandingPageFields> {
   };
 }
 
-export type CONTENT_TYPE = "fundraising" | "landingPage";
+export interface IWarStatisticsFields {
+  /** Загиблих дорослих */
+  adultsDied: number;
+
+  /** Загиблих дітей */
+  childrenDied: number;
+
+  /** Постраждалих */
+  wounded: number;
+
+  /** Знищених домівок */
+  destroyedHouses: number;
+}
+
+/** Числа постраждалих внаслідок війни */
+
+export interface IWarStatistics extends Entry<IWarStatisticsFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "warStatistics";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export type CONTENT_TYPE = "fundraising" | "landingPage" | "warStatistics";
 
 export type LOCALE_CODE = "en-US";
 
