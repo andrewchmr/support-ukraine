@@ -1,7 +1,8 @@
 import { Box } from "@chakra-ui/react";
+import type { Asset } from "contentful";
 import type { GetStaticProps, NextPage } from "next";
 
-import { AboutUsSection } from "lib/components/LandingPage/AboutUsSection";
+import { Section } from "lib/components/LandingPage/Section";
 import { WelcomeSection } from "lib/components/LandingPage/WelcomeSection";
 import { LatestFundraisings } from "lib/components/LatestFundraisings";
 import Footer from "lib/components/layout/Footer";
@@ -13,6 +14,7 @@ import {
   fetchFundraisings,
 } from "services/client";
 
+
 interface LandingPageProps {
   fundraisings: Fundraising[];
   welcomeSectionTitle: string;
@@ -21,6 +23,7 @@ interface LandingPageProps {
   // whySupportDescription: string;
   aboutUsTitle: string;
   aboutUsDescription: string;
+  aboutUsImage: Asset | undefined;
 }
 const LandingPage: NextPage<LandingPageProps> = ({
   fundraisings,
@@ -28,6 +31,7 @@ const LandingPage: NextPage<LandingPageProps> = ({
   welcomeSectionDescription,
   aboutUsTitle,
   aboutUsDescription,
+  aboutUsImage,
 }: LandingPageProps) => {
   return (
     <>
@@ -39,9 +43,11 @@ const LandingPage: NextPage<LandingPageProps> = ({
         />
         <LayoutContainer>
           <LatestFundraisings fundraisings={fundraisings} />
-          <AboutUsSection
-            aboutUsTitle={aboutUsTitle}
-            aboutUsDescription={aboutUsDescription}
+          <Section
+            id="about_us"
+            title={aboutUsTitle}
+            description={aboutUsDescription}
+            image={aboutUsImage}
           />
         </LayoutContainer>
       </Box>
@@ -58,8 +64,11 @@ export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
   } = await fetchLandingPageSectionData("welcome_section");
   const { titleEn: whySupportTitle, descriptionEn: whySupportDescription } =
     await fetchLandingPageSectionData("why_support_section");
-  const { titleEn: aboutUsTitle, descriptionEn: aboutUsDescription } =
-    await fetchLandingPageSectionData("about_us_section");
+  const {
+    titleEn: aboutUsTitle,
+    descriptionEn: aboutUsDescription,
+    image: aboutUsImage,
+  } = await fetchLandingPageSectionData("about_us_section");
 
   return {
     props: {
@@ -70,6 +79,7 @@ export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
       whySupportDescription,
       aboutUsTitle,
       aboutUsDescription,
+      aboutUsImage,
     },
     revalidate: 1,
   };

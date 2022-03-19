@@ -72,6 +72,9 @@ export interface ILandingPageFields {
 
   /** Опис Ua */
   descriptionUa?: string | undefined;
+
+  /** Зображення */
+  image?: Asset | undefined;
 }
 
 /** Елементи, що знаходяться на головній сторінці */
