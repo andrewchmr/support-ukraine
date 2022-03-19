@@ -3,7 +3,9 @@ import type { BoxProps, TextProps } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
+import { Logotype } from "../icons/Logotype";
 import { Mail } from "../icons/Mail";
+import colors from "lib/styles/customTheme/colors";
 
 import { LayoutContainer } from "./LayoutContainer";
 
@@ -48,7 +50,7 @@ const Header = ({ isDark = false, ...props }: HeaderProps) => {
       <Heading as="h1" size="md">
         <NextLink href="/" passHref>
           <HeaderText as="a" isDark={isDark}>
-            Logo
+            <Logotype color={isDark ? colors.white.base : colors.green.dark} />
           </HeaderText>
         </NextLink>
       </Heading>
