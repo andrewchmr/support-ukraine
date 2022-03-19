@@ -6,8 +6,8 @@ export const ArrowRight = () => {
   return (
     <Icon
       xmlns="http://www.w3.org/2000/svg"
-      width="9"
-      height="14"
+      width="9px"
+      height="14px"
       viewBox="0 0 9 14"
       fill="none"
     >
