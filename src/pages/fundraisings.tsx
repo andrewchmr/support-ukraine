@@ -13,7 +13,7 @@ interface FundraisingsProps {
 }
 
 const TITLE =
-  "Verified fundraisers to support the Ukrainian Army |  Help Ukraine Army";
+  "Verified fundraisers to support the Ukrainian Army | Help Ukraine Army";
 const DESC =
   "A list of official and verified foundations and fundraisers directly supporting the Ukrainian Army. Choose a fundraiser and make a real impact! | Help Ukraine Army";
 

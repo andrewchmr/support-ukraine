@@ -9,7 +9,7 @@ interface Props {
 export const DESC =
   "Guidance on official and verified campaigns supporting the Ukrainian Army and defence. Find verified fundraisers and foundations to help the Ukrainian Army!";
 export const TITLE =
-  "Verified support for the Ukrainian army and defence | Help Ukraine Army";
+  "Verified support for the Ukrainian Army and defence | Help Ukraine Army";
 
 export const SEOTags = ({
   title = TITLE,
