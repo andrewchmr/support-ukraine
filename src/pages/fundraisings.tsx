@@ -4,15 +4,23 @@ import type { GetStaticProps } from "next";
 import { FundraisingCard } from "lib/components/FundraisingCard";
 import Layout from "lib/components/layout";
 import { LayoutContainer } from "lib/components/layout/LayoutContainer";
+import { SEOTags } from "lib/components/SEOTags";
 import type { Fundraising } from "services/client";
 import { fetchFundraisings } from "services/client";
 
 interface FundraisingsProps {
   fundraisings: Fundraising[];
 }
+
+const TITLE =
+  "Verified fundraisers to support the Ukrainian Army | Help Ukraine Army";
+const DESC =
+  "A list of official and verified foundations and fundraisers directly supporting the Ukrainian Army. Choose a fundraiser and make a real impact! | Help Ukraine Army";
+
 export default function FundraisingsPage({ fundraisings }: FundraisingsProps) {
   return (
     <Layout>
+      <SEOTags title={TITLE} description={DESC} />
       <LayoutContainer>
         <Heading as="h1" fontWeight="bold" fontSize={{ base: "lg", sm: "3xl" }}>
           Fundraisings

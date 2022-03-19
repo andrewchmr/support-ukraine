@@ -5,7 +5,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 import customTheme from "lib/styles/customTheme";
 
-const APP_NAME = "nextarter-chakra";
+const APP_NAME = "Help Ukraine Army";
 
 class MyDocument extends Document {
   static getInitialProps(ctx: DocumentContext) {
@@ -30,16 +30,28 @@ class MyDocument extends Document {
           <meta name="apple-mobile-web-app-title" content={APP_NAME} />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="theme-color" content="#FFFFFF" />
 
-          {/* add your own app-icon */}
-          {/* <link
+          <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/icons/apple-touch-icon.png"
+            href="/apple-touch-icon.png"
           />
-          <link rel="icon" href="/app-icon.png" /> */}
-          <link rel="manifest" href="/manifest.json" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#315863" />
+          <meta name="msapplication-TileColor" content="#00aba9" />
+          <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
           <ColorModeScript
