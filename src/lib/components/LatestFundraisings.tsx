@@ -31,7 +31,7 @@ export const LatestFundraisings = ({ fundraisings }: Props) => {
   };
 
   return (
-    <Box as="section" my={12}>
+    <Box as="section" mt={12}>
       <Flex justify="space-between" marginBottom={8}>
         <Heading as="h3" fontWeight="bold" fontSize={{ base: "lg", sm: "3xl" }}>
           Latest fundraisings

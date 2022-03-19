@@ -17,13 +17,18 @@ export function Section({ title, description, image, id }: Props) {
   }
 
   return (
-    <Flex id={id} py="16" gap={4} flexDirection={{ base: "column", md: "row" }}>
+    <Flex
+      id={id}
+      py={{ base: "10", md: "16" }}
+      gap={4}
+      flexDirection={{ base: "column", md: "row" }}
+    >
       <Box flex={1}>
         <LineAboveTitle bgColor="black.base" />
         <Text
+          fontSize={{ base: "lg", sm: "3xl" }}
           fontWeight="semibold"
-          fontSize="32px"
-          lineHeight="46px"
+          lineHeight={{ base: "26px", sm: "46px" }}
           color="black.base"
           as="h3"
         >
@@ -31,7 +36,7 @@ export function Section({ title, description, image, id }: Props) {
         </Text>
         <Text
           fontWeight="medium"
-          fontSize="20px"
+          fontSize={{ base: "md", sm: "20px" }}
           lineHeight="30px"
           color="black.base"
         >
