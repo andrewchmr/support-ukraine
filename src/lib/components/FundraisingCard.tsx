@@ -24,16 +24,18 @@ export const FundraisingCard = ({
         objectFit="cover"
       />
       <Box px="4" py="6">
-        <Box
+        <LinkOverlay
+          href={fundraisingLink}
           mt="1"
           fontWeight="semibold"
-          as="h4"
           lineHeight="tight"
           fontSize="xl"
           noOfLines={2}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {organisationNameEn}
-        </Box>
+        </LinkOverlay>
         <Box
           display="flex"
           mt="2"
@@ -41,16 +43,9 @@ export const FundraisingCard = ({
           justifyContent="space-between"
           gap={2}
         >
-          <LinkOverlay
-            href={fundraisingLink}
-            color="gray.600"
-            fontSize="md"
-            target="_blank"
-            rel="noopener noreferrer"
-            noOfLines={4}
-          >
+          <Box color="gray.600" fontSize="md" noOfLines={4}>
             {fundraisingDescriptionEn}
-          </LinkOverlay>
+          </Box>
           <Box as="span" display="flex" flexShrink={0}>
             <ArrowLongRight />
           </Box>
