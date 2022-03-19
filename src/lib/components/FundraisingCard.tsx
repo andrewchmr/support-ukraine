@@ -5,19 +5,16 @@ import type { Fundraising } from "services/client";
 
 import { ArrowLongRight } from "./icons/ArrowLongRight";
 
-interface Props extends Fundraising {
-  minWidth?: string | number;
-}
+type Props = Fundraising;
 
 export const FundraisingCard = ({
   fundraisingDescriptionEn,
   organisationNameEn,
   image,
   fundraisingLink,
-  minWidth,
 }: Props) => {
   return (
-    <LinkBox minWidth={minWidth} maxW="sm" borderWidth="1px" overflow="hidden">
+    <LinkBox width="100%" maxW="sm" borderWidth="1px" overflow="hidden">
       <NextImage
         src={`https:${image.fields.file.url}`}
         alt={image.fields.title}

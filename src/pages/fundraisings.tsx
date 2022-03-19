@@ -20,8 +20,13 @@ export default function FundraisingsPage({ fundraisings }: FundraisingsProps) {
             ({fundraisings.length})
           </Text>
         </Heading>
-        <Divider marginTop={10} />
-        <SimpleGrid marginTop={10} columns={[1, 2, 3, 4]} spacing="24px">
+        <Divider marginTop={10} display={["none", "block"]} />
+        <SimpleGrid
+          marginTop={[6, 10]}
+          marginBottom={[10, 16]}
+          columns={[1, 2, 2, 3, 4]}
+          spacing="24px"
+        >
           {fundraisings.map((fundraising) => (
             <FundraisingCard key={fundraising.id} {...fundraising} />
           ))}

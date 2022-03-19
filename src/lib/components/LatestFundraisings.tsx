@@ -49,13 +49,9 @@ export const LatestFundraisings = ({ fundraisings }: Props) => {
         </NextLink>
       </Flex>
       <ScrollMenu onWheel={onWheel}>
-        <Flex gap={6}>
+        <Flex minWidth={1200} gap={6}>
           {fundraisings.map((fundraising) => (
-            <FundraisingCard
-              minWidth={250}
-              key={fundraising.id}
-              {...fundraising}
-            />
+            <FundraisingCard key={fundraising.id} {...fundraising} />
           ))}
         </Flex>
       </ScrollMenu>
