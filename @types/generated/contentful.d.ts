@@ -4,15 +4,6 @@ import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
 export interface IFundraisingFields {
-  /** Назва збірки коштів EN */
-  fundraisingTitleEn: string;
-
-  /** Назва збірки коштів PL */
-  fundraisingTitlePl?: string | undefined;
-
-  /** Назва збірки коштів UA */
-  fundraisingTitleUa?: string | undefined;
-
   /** Назва організації EN */
   organisationNameEn: string;
 
@@ -21,6 +12,15 @@ export interface IFundraisingFields {
 
   /** Назва організації UA */
   organisationNameUa?: string | undefined;
+
+  /** Опис збірки коштів EN */
+  fundraisingDescriptionEn: string;
+
+  /** Опис збірки коштів PL */
+  fundraisingDescriptionPl?: string | undefined;
+
+  /** Опис збірки коштів UA */
+  fundraisingDescriptionUa?: string | undefined;
 
   /** Лінк до збору коштів */
   fundraisingLink: string;

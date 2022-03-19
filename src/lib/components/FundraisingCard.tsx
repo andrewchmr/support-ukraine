@@ -10,7 +10,7 @@ interface Props extends Fundraising {
 }
 
 export const FundraisingCard = ({
-  fundraisingTitleEn,
+  fundraisingDescriptionEn,
   organisationNameEn,
   image,
   fundraisingLink,
@@ -35,7 +35,7 @@ export const FundraisingCard = ({
           fontSize="xl"
           noOfLines={2}
         >
-          {fundraisingTitleEn}
+          {organisationNameEn}
         </Box>
         <Box
           display="flex"
@@ -50,9 +50,9 @@ export const FundraisingCard = ({
             fontSize="md"
             target="_blank"
             rel="noopener noreferrer"
-            isTruncated
+            noOfLines={4}
           >
-            {organisationNameEn}
+            {fundraisingDescriptionEn}
           </LinkOverlay>
           <Box as="span" display="flex" flexShrink={0}>
             <ArrowLongRight />
