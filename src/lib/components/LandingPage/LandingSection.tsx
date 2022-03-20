@@ -45,7 +45,7 @@ export function LandingSection({ title, description, image, id }: Props) {
         alignSelf={{ base: "center", md: "unset" }}
       >
         <NextImage
-          src={`https://${image?.fields.file.url}`}
+          src={`https:${image?.fields.file.url}`}
           width={420}
           height={282}
           objectFit="contain"
