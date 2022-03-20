@@ -1,7 +1,6 @@
 import { Heading, Link } from "@chakra-ui/react";
 import type { BoxProps } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { useRouter } from "next/router";
 
 import { Logotype } from "lib/components/icons/Logotype";
 import colors from "lib/styles/customTheme/colors";
@@ -14,8 +13,6 @@ interface HeaderProps extends BoxProps {
   isDark?: boolean;
 }
 export const Header = ({ isDark = false, ...props }: HeaderProps) => {
-  const router = useRouter();
-
   return (
     <HeaderLayoutContainer isDark={isDark} {...props}>
       <Heading size="md">
@@ -25,8 +22,8 @@ export const Header = ({ isDark = false, ...props }: HeaderProps) => {
           </Link>
         </NextLink>
       </Heading>
-      <DesktopNavigation router={router} isDark={isDark} />
-      <MobileNavigation router={router} isDark={isDark} />
+      <DesktopNavigation isDark={isDark} />
+      <MobileNavigation isDark={isDark} />
     </HeaderLayoutContainer>
   );
 };

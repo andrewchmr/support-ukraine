@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import type { Asset } from "contentful";
 import type { GetStaticProps, NextPage } from "next";
 
+import type { ILandingPageFields } from "../../@types/generated/contentful";
 import { LandingSection } from "lib/components/LandingPage/LandingSection";
 import { WelcomeSection } from "lib/components/LandingPage/WelcomeSection";
 import { LatestFundraisings } from "lib/components/LatestFundraisings";
@@ -16,48 +16,36 @@ import {
 
 interface LandingPageProps {
   fundraisings: Fundraising[];
-  welcomeSectionTitle: string;
-  welcomeSectionDescription: string;
-  // whySupportTitle: string;
-  // whySupportDescription: string;
-  aboutUsTitle: string;
-  aboutUsDescription: string;
-  aboutUsImage: Asset | undefined;
-  ourGoalTitle: string;
-  ourGoalDescription: string;
-  ourGoalImage: Asset | undefined;
+  welcomeSection: ILandingPageFields;
+  ourGoalSection: ILandingPageFields;
+  aboutUsSection: ILandingPageFields;
 }
 const LandingPage: NextPage<LandingPageProps> = ({
   fundraisings,
-  welcomeSectionTitle,
-  welcomeSectionDescription,
-  aboutUsTitle,
-  aboutUsDescription,
-  aboutUsImage,
-  ourGoalTitle,
-  ourGoalDescription,
-  ourGoalImage,
+  welcomeSection,
+  ourGoalSection,
+  aboutUsSection,
 }: LandingPageProps) => {
   return (
     <>
       <Header isDark />
       <Box as="main">
         <WelcomeSection
-          welcomeSectionTitle={welcomeSectionTitle}
-          welcomeSectionDescription={welcomeSectionDescription}
+          welcomeSectionTitle={welcomeSection.titleEn}
+          welcomeSectionDescription={welcomeSection.descriptionEn}
         />
         <LayoutContainer>
           <LatestFundraisings fundraisings={fundraisings} />
           <LandingSection
-            title={ourGoalTitle}
-            description={ourGoalDescription}
-            image={ourGoalImage}
+            title={ourGoalSection.titleEn}
+            description={ourGoalSection.descriptionEn}
+            image={ourGoalSection.image}
           />
           <LandingSection
             id="about_us"
-            title={aboutUsTitle}
-            description={aboutUsDescription}
-            image={aboutUsImage}
+            title={aboutUsSection.titleEn}
+            description={aboutUsSection.descriptionEn}
+            image={aboutUsSection.image}
           />
         </LayoutContainer>
       </Box>
@@ -68,32 +56,16 @@ const LandingPage: NextPage<LandingPageProps> = ({
 
 export const getStaticProps: GetStaticProps<LandingPageProps> = async () => {
   const fundraisings = await fetchFundraisings({ limit: 4 });
-  const {
-    titleEn: welcomeSectionTitle,
-    descriptionEn: welcomeSectionDescription,
-  } = await fetchLandingPageSectionData("welcome_section");
-  const {
-    titleEn: ourGoalTitle,
-    descriptionEn: ourGoalDescription,
-    image: ourGoalImage,
-  } = await fetchLandingPageSectionData("our_goal_section");
-  const {
-    titleEn: aboutUsTitle,
-    descriptionEn: aboutUsDescription,
-    image: aboutUsImage,
-  } = await fetchLandingPageSectionData("about_us_section");
+  const welcomeSection = await fetchLandingPageSectionData("welcome_section");
+  const ourGoalSection = await fetchLandingPageSectionData("our_goal_section");
+  const aboutUsSection = await fetchLandingPageSectionData("about_us_section");
 
   return {
     props: {
       fundraisings,
-      welcomeSectionTitle,
-      welcomeSectionDescription,
-      ourGoalTitle,
-      ourGoalDescription,
-      ourGoalImage,
-      aboutUsTitle,
-      aboutUsDescription,
-      aboutUsImage,
+      welcomeSection,
+      ourGoalSection,
+      aboutUsSection,
     },
     revalidate: 1,
   };
