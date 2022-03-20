@@ -12,10 +12,6 @@ interface Props {
 }
 
 export function LandingSection({ title, description, image, id }: Props) {
-  if (!image?.fields.file.url) {
-    return null;
-  }
-
   return (
     <Flex
       id={id}
