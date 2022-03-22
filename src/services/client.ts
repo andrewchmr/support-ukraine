@@ -1,9 +1,5 @@
 import "dotenv/config";
-import {
-  // ContentfulClientApi,
-  createClient,
-  // CreateClientParams,
-} from "contentful";
+import { createClient } from "contentful";
 
 import type {
   IFundraising,
@@ -22,6 +18,7 @@ export interface Fundraising extends IFundraisingFields {
 export async function fetchFundraisings(query?: any): Promise<Fundraising[]> {
   const { items: fundraisings } = await client.getEntries<IFundraisingFields>({
     content_type: "fundraising",
+    order: "-sys.createdAt",
     ...query,
   });
   return fundraisings.map(({ fields, sys }) => ({ ...fields, id: sys.id }));
