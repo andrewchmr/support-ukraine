@@ -12,7 +12,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import type { NextRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useRef } from "react";
 
 import { SocialIcons } from "lib/components/icons/SocialIcons";
@@ -22,11 +22,11 @@ import { headerLinks } from "./headerLinks";
 import { HeaderText } from "./HeaderText";
 
 interface MobileNavigationProps {
-  router: NextRouter;
   isDark: boolean;
 }
-export function MobileNavigation({ router, isDark }: MobileNavigationProps) {
+export function MobileNavigation({ isDark }: MobileNavigationProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useRouter();
   const emptyRef = useRef(null);
 
   const bgColor = isDark ? "green.dark" : "white.base";
