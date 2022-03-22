@@ -52,7 +52,7 @@ export const FundraisingCard = ({
           {organisationNameEn}
         </LinkOverlay>
         <Flex my="2" alignItems="center" justifyContent="space-between" gap={2}>
-          <Text color="grey.dark" fontSize="md" noOfLines={4}>
+          <Text color="grey.dark" fontSize="md" noOfLines={6}>
             {fundraisingDescriptionEn}
           </Text>
         </Flex>
