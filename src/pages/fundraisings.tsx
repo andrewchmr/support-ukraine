@@ -13,9 +13,9 @@ interface FundraisingsProps {
 }
 
 const TITLE =
-  "Verified fundraisers to support the Ukrainian Army | Help Ukraine Army";
+  "Verified fundraisers to support the Ukrainian Army | Help Ukrainian Army";
 const DESC =
-  "A list of official and verified foundations and fundraisers directly supporting the Ukrainian Army. Choose a fundraiser and make a real impact! | Help Ukraine Army";
+  "A list of official and verified foundations and fundraisers directly supporting the Ukrainian Army. Choose a fundraiser and make a real impact! | Help Ukrainian Army";
 
 export default function FundraisingsPage({ fundraisings }: FundraisingsProps) {
   return (

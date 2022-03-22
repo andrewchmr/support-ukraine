@@ -5,7 +5,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 import customTheme from "lib/styles/customTheme";
 
-const APP_NAME = "Help Ukraine Army";
+const APP_NAME = "Help Ukrainian Army";
 
 class MyDocument extends Document {
   static getInitialProps(ctx: DocumentContext) {
