@@ -1,7 +1,7 @@
 import type { BoxProps } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import NextLink from "next/link";
-import type { NextRouter } from "next/router";
+import { useRouter } from "next/router";
 
 import { Mail } from "lib/components/icons/Mail";
 
@@ -9,14 +9,14 @@ import { headerLinks } from "./headerLinks";
 import { HeaderText } from "./HeaderText";
 
 interface DesktopNavigationProps extends BoxProps {
-  router: NextRouter;
   isDark: boolean;
 }
 export function DesktopNavigation({
-  router,
   isDark,
   ...props
 }: DesktopNavigationProps) {
+  const router = useRouter();
+
   return (
     <Box display={{ base: "none", md: "flex" }} marginLeft="auto" {...props}>
       {headerLinks.map(({ name, path }) => {
