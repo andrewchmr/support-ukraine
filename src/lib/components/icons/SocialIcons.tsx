@@ -12,12 +12,26 @@ export const SocialIcons = ({ isDark = false, ...props }: SocialIconsProps) => {
   const color = isDark ? colors.white.base : colors.black.base;
   return (
     <Box gap="2" display="flex" marginRight={["unset", 10]} {...props}>
-      <SocialIcon color={color}>
-        <FacebookPath color={color} />
-      </SocialIcon>
-      <SocialIcon color={color}>
-        <TelegramPath color={color} />
-      </SocialIcon>
+      <Box
+        as="a"
+        href="https://www.facebook.com/UkraineArmyHelp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SocialIcon color={color}>
+          <FacebookPath color={color} />
+        </SocialIcon>
+      </Box>
+      <Box
+        as="a"
+        href="https://t.me/helpukrainianarmy"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SocialIcon color={color}>
+          <TelegramPath color={color} />
+        </SocialIcon>
+      </Box>
       <Box as="a" href="mailto:info@ukraine-army.help">
         <SocialIcon color={color}>
           <MailPath color={color} />
