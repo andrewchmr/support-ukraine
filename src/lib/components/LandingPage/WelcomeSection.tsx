@@ -1,11 +1,14 @@
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import type { BoxProps, IconProps } from "@chakra-ui/react";
-import { Icon, Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Icon, Box, Flex, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
-import NextLink from "next/link";
 
 import { LayoutContainer } from "../layout/LayoutContainer";
 import { LineAboveTitle } from "../LineAboveTitle";
+
+import {
+  AddAnOrganizationWelcomeSectionButton,
+  BecomeVolunteerWelcomeSectionButton,
+} from "./WelcomeSectionButton";
 
 const emblemContourWidth = 283;
 const emblemContourHeight = 323;
@@ -66,25 +69,14 @@ export function WelcomeSection({
           >
             {welcomeSectionDescription}
           </Text>
-          <NextLink href="/fundraisings" passHref>
-            <Button
-              as="a"
-              mt="12"
-              py="3"
-              px="5"
-              bgColor="yellow.base"
-              color="green.dark"
-              _hover={{ bgColor: "yellow.base", textDecor: "underline" }}
-              _active={{ bgColor: "yellow.light", textDecor: "underline" }}
-              fontSize="lg"
-              lineHeight="22px"
-              fontWeight="semibold"
-              borderRadius={0}
-              rightIcon={<ChevronRightIcon color="green.dark" w="6" h="6" />}
-            >
-              See fundraisings
-            </Button>
-          </NextLink>
+          <Flex mt="12" flexWrap="wrap">
+            <BecomeVolunteerWelcomeSectionButton
+              linkProps={{ display: { base: "none", md: "block" } }}
+              mr="4"
+              mb="4"
+            />
+            <AddAnOrganizationWelcomeSectionButton />
+          </Flex>
         </Box>
         <Flex
           display={{ base: "none", lg: "flex" }}
@@ -117,6 +109,20 @@ export function WelcomeSection({
             ))}
           </Box>
         </Flex>
+      </Flex>
+      <Flex display={{ base: "none", lg: "flex" }} justify="center" pt="4">
+        <svg
+          width="15"
+          height="35"
+          viewBox="0 0 15 35"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.79289 34.5645C7.18342 34.9551 7.81658 34.9551 8.20711 34.5645L14.5711 28.2006C14.9616 27.81 14.9616 27.1769 14.5711 26.7864C14.1805 26.3958 13.5474 26.3958 13.1569 26.7864L7.5 32.4432L1.84315 26.7864C1.45262 26.3958 0.819458 26.3958 0.428933 26.7864C0.038409 27.1769 0.038409 27.81 0.428933 28.2006L6.79289 34.5645ZM6.5 0.857422L6.5 33.8574L8.5 33.8574L8.5 0.857422L6.5 0.857422Z"
+            fill="white"
+          />
+        </svg>
       </Flex>
     </LayoutContainer>
   );

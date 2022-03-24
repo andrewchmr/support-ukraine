@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import type { VisibilityContext } from "react-horizontal-scrolling-menu";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 
+import { Routes } from "lib/constants";
 import type { Fundraising } from "services/client";
 
 import { FundraisingCard } from "./FundraisingCard";
@@ -36,7 +37,7 @@ export const LatestFundraisings = ({ fundraisings }: Props) => {
         <Heading as="h3" fontWeight="bold" fontSize={{ base: "lg", sm: "3xl" }}>
           Latest fundraisings
         </Heading>
-        <NextLink href="/fundraisings" passHref>
+        <NextLink href={Routes.fundraisings} passHref>
           <Link
             display="flex"
             alignItems="center"

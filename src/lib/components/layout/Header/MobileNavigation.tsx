@@ -16,6 +16,8 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 
 import { SocialIcons } from "lib/components/icons/SocialIcons";
+import { BecomeVolunteerWelcomeSectionButton } from "lib/components/LandingPage/WelcomeSectionButton";
+import { Routes } from "lib/constants";
 
 import { HeaderLayoutContainer } from "./HeaderLayoutContainer";
 import { headerLinks } from "./headerLinks";
@@ -64,6 +66,8 @@ export function MobileNavigation({ isDark }: MobileNavigationProps) {
           <DrawerBody>
             {headerLinks.map(({ name, path }) => {
               const isActive = router.pathname === path;
+              const isFundraisings = path === Routes.fundraisings;
+
               return (
                 <Box mb="3">
                   <NextLink key={path} href={path} passHref>
@@ -72,6 +76,7 @@ export function MobileNavigation({ isDark }: MobileNavigationProps) {
                       lineHeight="29px"
                       isDark={isDark}
                       isActive={isActive}
+                      isFundraisings={isFundraisings}
                       onClick={onClose}
                     >
                       {name}
@@ -80,6 +85,7 @@ export function MobileNavigation({ isDark }: MobileNavigationProps) {
                 </Box>
               );
             })}
+            <BecomeVolunteerWelcomeSectionButton mt="8" />
           </DrawerBody>
 
           <DrawerFooter justifyContent="flex-start" pb="12">

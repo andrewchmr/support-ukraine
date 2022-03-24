@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import { useRouter } from "next/router";
 
 import { Mail } from "lib/components/icons/Mail";
+import { Routes } from "lib/constants";
 
 import { headerLinks } from "./headerLinks";
 import { HeaderText } from "./HeaderText";
@@ -21,6 +22,7 @@ export function DesktopNavigation({
     <Box display={{ base: "none", md: "flex" }} marginLeft="auto" {...props}>
       {headerLinks.map(({ name, path }) => {
         const isActive = router.pathname === path;
+        const isFundraisings = path === Routes.fundraisings;
 
         return (
           <NextLink key={path} href={path} passHref>
@@ -28,6 +30,7 @@ export function DesktopNavigation({
               fontSize="lg"
               isActive={isActive}
               isDark={isDark}
+              isFundraisings={isFundraisings}
               mr="8"
             >
               {name}
