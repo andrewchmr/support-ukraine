@@ -14,7 +14,15 @@ interface HeaderProps extends BoxProps {
 }
 export const Header = ({ isDark = false, ...props }: HeaderProps) => {
   return (
-    <HeaderLayoutContainer isDark={isDark} {...props}>
+    <HeaderLayoutContainer
+      outerProps={
+        isDark
+          ? {}
+          : { borderBottomWidth: "1px", borderBottomColor: "grey.medium" }
+      }
+      isDark={isDark}
+      {...props}
+    >
       <Heading size="md">
         <NextLink href="/" passHref>
           <Link>
