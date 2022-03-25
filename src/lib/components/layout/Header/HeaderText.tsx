@@ -20,7 +20,8 @@ export const HeaderText = ({
     <Text
       as="a"
       fontWeight={isActive ? "semibold" : undefined}
-      textDecoration={isActive ? "underline" : undefined}
+      textDecor={isActive ? "underline" : undefined}
+      _hover={{ textDecor: "underline" }}
       color={isDark ? darkColor : lightColor}
       {...props}
     />

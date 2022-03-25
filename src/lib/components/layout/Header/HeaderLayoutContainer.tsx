@@ -6,6 +6,7 @@ interface HeaderLayoutContainerProps extends LayoutContainerProps {
 }
 export const HeaderLayoutContainer = ({
   isDark = false,
+  outerProps,
   ...props
 }: HeaderLayoutContainerProps) => (
   <LayoutContainer
@@ -16,6 +17,7 @@ export const HeaderLayoutContainer = ({
     h="72px"
     outerProps={{
       bgColor: isDark ? "green.dark" : undefined,
+      ...outerProps,
     }}
     justifyContent="space-between"
     {...props}

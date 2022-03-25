@@ -22,13 +22,23 @@ export default function FundraisingsPage({ fundraisings }: FundraisingsProps) {
     <Layout>
       <SEOTags title={TITLE} description={DESC} />
       <LayoutContainer>
-        <Heading as="h1" fontWeight="bold" fontSize={{ base: "lg", sm: "3xl" }}>
+        <Heading
+          mt="10"
+          as="h1"
+          fontWeight="bold"
+          fontSize={{ base: "lg", sm: "3xl" }}
+        >
           Fundraisings
           <Text marginLeft={2} as="span" color="grey.base">
             ({fundraisings.length})
           </Text>
         </Heading>
-        <Divider marginTop={10} display={["none", "block"]} />
+        <Divider
+          my="6"
+          borderColor="grey.medium"
+          opacity="1"
+          display={["none", "block"]}
+        />
         <SimpleGrid
           marginTop={[6, 10]}
           marginBottom={[10, 16]}

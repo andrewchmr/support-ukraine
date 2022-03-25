@@ -54,7 +54,15 @@ export function MobileNavigation({ isDark }: MobileNavigationProps) {
       >
         <DrawerOverlay />
         <DrawerContent bgColor={bgColor}>
-          <HeaderLayoutContainer justifyContent="flex-end" isDark={isDark}>
+          <HeaderLayoutContainer
+            outerProps={
+              isDark
+                ? {}
+                : { borderBottomWidth: "1px", borderBottomColor: "grey.medium" }
+            }
+            justifyContent="flex-end"
+            isDark={isDark}
+          >
             <DrawerCloseButton
               _hover={{ background: "transparent", opacity: "0.8" }}
               size="lg"
@@ -63,7 +71,7 @@ export function MobileNavigation({ isDark }: MobileNavigationProps) {
             />
           </HeaderLayoutContainer>
 
-          <DrawerBody>
+          <DrawerBody p="6">
             {headerLinks.map(({ name, path }) => {
               const isActive = router.pathname === path;
               const isFundraisings = path === Routes.fundraisings;
