@@ -37,7 +37,7 @@
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
-    "@chakra-ui/cli": "^1.9.0",
+    "@chakra-ui/cli": "^2.0.0",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/react": "^17.0.41",
     "commitlint": "^16.2.1",
