@@ -40,7 +40,7 @@
     "@chakra-ui/cli": "^1.9.0",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/react": "^17.0.41",
-    "commitlint": "^16.2.1",
+    "commitlint": "^17.0.0",
     "contentful-typescript-codegen": "^3.2.3",
     "eslint": "^8.9.0",
     "eslint-config-next": "^12.1.0",
