@@ -5576,10 +5576,10 @@ react-focus-lock@2.5.2:
     use-callback-ref "^1.2.5"
     use-sidecar "^1.0.5"
 
-react-horizontal-scrolling-menu@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-2.7.1.tgz#96e026f1317666de0d6fb430fe950af728c4180d"
-  integrity sha512-2CL5QvWdOXUFbzzE45wbVTD/uq0UDhboRSWF77sApaDIXzEqhFmftufE+PFYhbExFm4sXbK21EQ0btZ9l6ezsg==
+react-horizontal-scrolling-menu@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-2.8.2.tgz#cb7bc7c6798e0cd9203555cf4e6fcffb5f0ba0f2"
+  integrity sha512-OmCQDONx/4TnyxQr+RoxP7AwSPQxdQGkFnWuCknF3s2pySNAogL4AB1LQv6bUrXIwFMXdrJBqxFeq3tZ24J7/w==
   dependencies:
     smooth-scroll-into-view-if-needed "^1.1.32"
 
