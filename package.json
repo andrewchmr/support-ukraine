@@ -42,7 +42,7 @@
     "@types/react": "^17.0.41",
     "commitlint": "^16.2.1",
     "contentful-typescript-codegen": "^3.2.3",
-    "eslint": "^8.9.0",
+    "eslint": "^8.24.0",
     "eslint-config-next": "^12.1.0",
     "eslint-config-sznm": "^0.2.1",
     "husky": "^7.0.4",
