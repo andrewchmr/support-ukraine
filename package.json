@@ -25,7 +25,7 @@
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
-    "contentful": "^9.1.18",
+    "contentful": "^9.2.11",
     "contentful-management": "^8.2.2",
     "dotenv": "^16.0.0",
     "framer-motion": "^6.2.8",
