@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@chakra-ui/cli": "^1.9.0",
-    "@commitlint/config-conventional": "^16.2.1",
+    "@commitlint/config-conventional": "^17.4.3",
     "@types/react": "^17.0.41",
     "commitlint": "^16.2.1",
     "contentful-typescript-codegen": "^3.2.3",
